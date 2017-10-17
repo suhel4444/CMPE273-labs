@@ -24,6 +24,5 @@ RUN apt-get install -y libsnappy-dev zlib1g-dev libbz2-dev libgflags-dev \
     && make install-shared INSTALL_PATH=/usr
 RUN pip install pyrocksdb
 
-
 CMD ["python3.6"]
 
