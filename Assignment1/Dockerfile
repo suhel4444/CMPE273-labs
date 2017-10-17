@@ -26,3 +26,4 @@ RUN pip install pyrocksdb
 
 CMD ["python3.6"]
 
+#create a container : $ docker run -it -p 8000:8000 --rm --name server -v "$PWD":/usr/src/myapp -w /usr/src/myapp <image> python3.6 assignment1.py
