@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+message Request {
+    string key = 1;
+    string data = 2;
+}
+
+message Response {
+    string data = 1;
+}
+
+message SyncRequest {
+}
+
+message Sync {
+    string op = 1;
+    string key = 2;
+    string data = 3;
+}
+
+service Replicator {
+   rpc sync(SyncRequest) returns (stream Sync) {}
+
+   rpc put(Request) returns (Response) {}
+   rpc delete(Request) returns (Response) {}
+   rpc get(Request) returns (Response) {}
+}
+
